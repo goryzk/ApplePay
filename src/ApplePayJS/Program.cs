@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+
 builder.Services.AddOptions();
 builder.Services.Configure<ApplePayOptions>(builder.Configuration.GetSection("ApplePay"));
 

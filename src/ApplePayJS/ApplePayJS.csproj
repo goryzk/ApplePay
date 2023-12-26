@@ -12,12 +12,19 @@
     <PackageTags>applepay</PackageTags>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <RootNamespace>JustEat.ApplePayJS</RootNamespace>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <TypeScriptToolsVersion>latest</TypeScriptToolsVersion>
     <UserSecretsId>JustEat.ApplePayJS</UserSecretsId>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Content Update="*.pfx" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Certificates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.0" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(InstallWebPackages)' == '' and ('$(CI)' != '' or !Exists('$(MSBuildThisFileDirectory)\node_modules')) ">
     <InstallWebPackages>true</InstallWebPackages>
