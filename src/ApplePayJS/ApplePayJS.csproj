@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
     <AssemblyName>JustEat.ApplePayJS</AssemblyName>
     <ChecksumAlgorithm>SHA256</ChecksumAlgorithm>
     <OutputType>Exe</OutputType>
