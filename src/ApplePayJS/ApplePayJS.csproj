@@ -13,6 +13,7 @@
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <RootNamespace>JustEat.ApplePayJS</RootNamespace>
     <TargetFramework>net7.0</TargetFramework>
+    <EnvironmentName>Production</EnvironmentName>
     <TypeScriptToolsVersion>latest</TypeScriptToolsVersion>
     <UserSecretsId>JustEat.ApplePayJS</UserSecretsId>
     <LangVersion>preview</LangVersion>
