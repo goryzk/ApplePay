@@ -3,6 +3,7 @@
 
 using System.Net.Http.Json;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace JustEat.ApplePayJS.Clients;
 
@@ -15,11 +16,16 @@ public class ApplePayClient(HttpClient httpClient)
     {
         // POST the data to create a valid Apple Pay merchant session.
         using var response = await httpClient.PostAsJsonAsync(requestUri, request, cancellationToken);
+        if (!response.IsSuccessStatusCode)
+        {
+            throw new Exception(response.ReasonPhrase);
+        }
 
-        response.EnsureSuccessStatusCode();
+        var jsonResponse = await response.Content.ReadAsStringAsync(cancellationToken);
 
         // Read the opaque merchant session JSON from the response body.
         //var merchantSession = await response.Content.ReadFromJsonAsync<JsonDocument>(cancellationToken);
-        return null; //merchantSession!;
+
+        return JsonSerializer.Deserialize<JsonDocument>(jsonResponse);
     }
 }
