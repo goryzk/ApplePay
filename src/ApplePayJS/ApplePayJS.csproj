@@ -27,7 +27,7 @@
     <Folder Include="Certificates\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.14" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.15" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.4" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(InstallWebPackages)' == '' and ('$(CI)' != '' or !Exists('$(MSBuildThisFileDirectory)\node_modules')) ">
